@@ -1,18 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { ImageService } from './service/image.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GalleryComponent } from './component/gallery/gallery.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, GalleryComponent],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [ImageService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
